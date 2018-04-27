@@ -1,5 +1,2 @@
-@media only screen and (max-width: 450px) {
-    img {
-        max-width: 100%;
-    }
-}
+@import 'mobile.css';
+@import 'icons.css';
