@@ -5,3 +5,7 @@ function Project (title, imgFilepath, description) {
     this.imgFilepath = imgFilepath;
     this.description = description;
 }
+
+Project.prototype.toHtml = function() {
+    var $newArticle = $('article.template').clone();
+}
