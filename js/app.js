@@ -1,4 +1,4 @@
-'use strice';
+'use strict';
 
 function Project (title, imgFilepath, description) {
     this.title = title;
