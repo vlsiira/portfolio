@@ -26,3 +26,7 @@
 .icon-menu:before {
 	content: "\e902";
 }
+
+.icon-cross:before {
+	content: "\e90d";
+}

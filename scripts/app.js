@@ -9,3 +9,7 @@ function Project (title, imgFilepath, description) {
 Project.prototype.toHtml = function() {
     var $newArticle = $('article.template').clone();
 }
+
+$('#menu').on('click', function() {
+    $(this).toggleClass('icon-cross')
+})
