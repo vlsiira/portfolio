@@ -3,12 +3,12 @@
     text-align: center;
 }
 
-/* ul {
+ul {
     display: none;
-} */
+}
 
 /* .icon-menu:hover {
-    display: none;
+    display: block;
 } */
 
 /* Do I need this media query?  Can I put the img max-width declaration in a normal css file, to apply to images all the time?  ---It's in base.css
