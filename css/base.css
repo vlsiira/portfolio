@@ -1,6 +1,6 @@
-body {
-    background-image: url("../img/block-background.jpg");
-}
+/* body {
+    background-image: url("../img/block-background-sm.jpg");
+} */
 
 header, section, footer {
     background-color: rgb(40,84,108,0.8);
