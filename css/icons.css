@@ -30,3 +30,7 @@
 .icon-cross:before {
 	content: "\e90d";
 }
+
+.icon-github:before {
+	content: "\e907";
+}

@@ -1,7 +1,39 @@
+body {
+    background-image: url("../img/block-background.jpg");
+}
+
+header, section, footer {
+    background-color: rgb(40,84,108,0.8);
+    width: 90%;
+    margin: auto;
+    color: rgb(186, 197, 197);
+}
+
+h1, h3 {
+    text-align: center;
+}
+
 nav li {
     list-style-type: none;
 }
 
 img {
     max-width: 100%;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-nav {
+    padding: 7px;
+}
+
+a {
+    color: rgb(32, 169, 96);
+}
+
+a:visited {
+    color: rgb(21, 150, 219);
 }
