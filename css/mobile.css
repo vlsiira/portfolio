@@ -1,14 +1,20 @@
 .icon-menu {
-    text-align: right;
+    font-size: 1.75em;
+    text-align: center;
 }
 
-#header-container {
-    display: flex;
+ul {
+    display: none;
 }
 
+/* .icon-menu:hover {
+    display: block;
+} */
+
+/* Do I need this media query?  Can I put the img max-width declaration in a normal css file, to apply to images all the time?  ---It's in base.css
 @media only screen and (max-width: 450px) {
     img {
         max-width: 100%;
     }
 
-}
+} */

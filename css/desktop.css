@@ -3,4 +3,9 @@
     .icon-menu {
         display: none;
     }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
 }
