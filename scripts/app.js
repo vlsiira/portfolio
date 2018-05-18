@@ -31,8 +31,8 @@ $('#menu').on('click', function(event) {
     event.preventDefault();
     $(this).toggleClass('icon-cross');
     if ($(this).hasClass ('icon-cross')) {
-        $('ul').show();
+        $('#nav-ul').show();
     } else {
-        $('ul').hide();
+        $('#nav-ul').hide();
     }
 })
