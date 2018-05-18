@@ -13,7 +13,7 @@ var rawData = [
     },
     {
         title: 'Thirsty Thistles',
-        imgFilepath: '',
+        imgFilepath: 'img/ThirstyThistles.png',
         description: 'Allows gardeners to create a watering schedule based on plant type, and to check off which plants have been watered.'
     }
 ];
