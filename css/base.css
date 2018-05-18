@@ -18,6 +18,7 @@ header {
 
 section, footer, #projects-div {
     width: 90%;
+    /* padding: 5px; This made my semi-transparent overlays flow together--err */  
 }
 
 h1, h3 {
@@ -48,7 +49,7 @@ footer {
 }
 
 #footer-nav, #footer-copy {
-    padding: 7px;
+    padding: .2em;
 }
 
 a {
