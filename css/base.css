@@ -2,7 +2,7 @@
     background-image: url("../img/block-background-sm.jpg");
 } */
 
-header, section, footer {
+header, #skills, footer, #projects-div, #about {
     background-color: rgb(40,84,108,0.8);
     margin: auto;
     color: rgb(186, 197, 197);
@@ -16,7 +16,7 @@ header {
     border-radius: 5px;
 }
 
-section, footer {
+section, footer, #projects-div {
     width: 90%;
 }
 
@@ -32,6 +32,10 @@ nav li {
     border: 1px solid;
     border-color: rgb(32, 169, 96);
     border-radius: 5px;
+}
+
+#projects {
+    display: flex;
 }
 
 img {
