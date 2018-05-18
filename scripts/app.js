@@ -1,14 +1,29 @@
 'use strict';
 
-function Project (title, imgFilepath, description) {
-    this.title = title;
-    this.imgFilepath = imgFilepath;
-    this.description = description;
+let projects = [];
+
+function Project (rawDataObj) {
+    this.title = rawDataObj.title;
+    this.imgFilepath = rawDataObj.imgFilepath;
+    this.description = rawDataObj.description;
 }
 
 Project.prototype.toHtml = function() {
-    var $newArticle = $('article.template').clone();
+    const $newArticle = $('article.template').clone();
+    $newArticle.removeClass('template');
+
+    $newArticle.find('h3').text(this.title);
+
+    return $newArticle;
 }
+
+rawData.forEach(function(projectObject){
+    projects.push(new Project(projectObject));
+});
+
+projects.forEach(function(project) {
+    $('#projects').append(project.toHtml());
+});
 
 $('#menu').on('click', function(event) {
     event.preventDefault();
@@ -19,7 +34,3 @@ $('#menu').on('click', function(event) {
         $('ul').hide();
     }
 })
-
-// hideNav = function() {
-//     $('#menu').on
-// }
