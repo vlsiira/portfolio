@@ -12,7 +12,9 @@ Project.prototype.toHtml = function() {
     const $newArticle = $('article.template').clone();
     $newArticle.removeClass('template');
 
+    $newArticle.find('img').attr('src', this.imgFilepath);
     $newArticle.find('h3').text(this.title);
+    $newArticle.find('h4').text(this.description);
 
     return $newArticle;
 }
