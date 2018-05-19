@@ -40,4 +40,9 @@ $('#menu').on('click', function(event) {
 // nav handler
 $('#nav-ul a').on('click', function() {
     console.log(this);
+
+    let whereToGo = $(this).data('tab');
+    console.log('where:', whereToGo);
+    $('.tab-content').hide();
+    $('#' + whereToGo).show();
 })
