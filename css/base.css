@@ -2,7 +2,7 @@
     background-image: url("../img/block-background-sm.jpg");
 } */
 
-header, #skills, footer, #projects-div, #about {
+header, #skills, footer, #projects, #about {
     background-color: rgb(40,84,108,0.8);
     margin: auto;
     color: rgb(186, 197, 197);
@@ -16,7 +16,7 @@ header {
     border-radius: 5px;
 }
 
-section, footer, #projects-div {
+section, footer, #projects {
     width: 90%;
     /* padding: 5px; This made my semi-transparent overlays flow together--err */  
 }

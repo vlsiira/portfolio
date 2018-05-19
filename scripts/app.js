@@ -36,3 +36,15 @@ $('#menu').on('click', function(event) {
         $('#nav-ul').hide();
     }
 })
+
+// nav handler
+$('#nav-ul a').on('click', function() {
+    let whereToGo = $(this).data('tab');
+
+    $('.tab-content').hide();
+    $('#' + whereToGo).show();
+})
+
+$(document).ready(function() {
+    $('.tab-content').hide();
+})
