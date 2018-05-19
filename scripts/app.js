@@ -36,3 +36,8 @@ $('#menu').on('click', function(event) {
         $('#nav-ul').hide();
     }
 })
+
+// nav handler
+$('#nav-ul a').on('click', function() {
+    console.log(this);
+})
