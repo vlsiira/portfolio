@@ -9,14 +9,19 @@ function Project (rawDataObj) {
 }
 
 Project.prototype.toHtml = function() {
-    const $newArticle = $('article.template').clone();
-    $newArticle.removeClass('template');
+    console.log('handlebars:', $('#project-template').html());
+    var templateFiller = Handlebars.compile($('#project-template').html());
+    var filledTemplate = templateFiller(this);
 
-    $newArticle.find('img').attr('src', this.imgFilepath);
-    $newArticle.find('h3').text(this.title);
-    $newArticle.find('h4').text(this.description);
+    return filledTemplate;
+    // const $newArticle = $('article.template').clone();
+    // $newArticle.removeClass('template');
 
-    return $newArticle;
+    // $newArticle.find('img').attr('src', this.imgFilepath);
+    // $newArticle.find('h3').text(this.title);
+    // $newArticle.find('h4').text(this.description);
+
+    // return $newArticle;
 }
 
 rawData.forEach(function(projectObject){
