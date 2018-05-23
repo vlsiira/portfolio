@@ -27,6 +27,7 @@ projects.forEach(function(project) {
     $('#projects').append(project.toHtml());
 });
 
+// nav handler- toggles menu/cross in mobile
 $('#menu').on('click', function(event) {
     event.preventDefault();
     $(this).toggleClass('icon-cross');
@@ -37,7 +38,7 @@ $('#menu').on('click', function(event) {
     }
 })
 
-// nav handler
+// nav handler- shows content when nav elements clicked
 $('#nav-ul a').on('click', function() {
     let whereToGo = $(this).data('tab');
 
@@ -45,6 +46,7 @@ $('#nav-ul a').on('click', function() {
     $('#' + whereToGo).show();
 })
 
+// hides content on load
 $(document).ready(function() {
     $('.tab-content').hide();
 })
