@@ -8,6 +8,7 @@ function Project (rawDataObj) {
     this.description = rawDataObj.description;
 }
 
+// imgFilepath showing in browser, instead of img- b/c .html?
 Project.prototype.toHtml = function() {
     console.log('handlebars:', $('#project-template').html());
     var templateFiller = Handlebars.compile($('#project-template').html());
