@@ -8,15 +8,21 @@ function Project (rawDataObj) {
     this.description = rawDataObj.description;
 }
 
+// imgFilepath showing in browser, instead of img- b/c .html?
 Project.prototype.toHtml = function() {
-    const $newArticle = $('article.template').clone();
-    $newArticle.removeClass('template');
+    console.log('handlebars:', $('#project-template').html());
+    var templateFiller = Handlebars.compile($('#project-template').html());
+    var filledTemplate = templateFiller(this);
 
-    $newArticle.find('img').attr('src', this.imgFilepath);
-    $newArticle.find('h3').text(this.title);
-    $newArticle.find('h4').text(this.description);
+    return filledTemplate;
+    // const $newArticle = $('article.template').clone();
+    // $newArticle.removeClass('template');
 
-    return $newArticle;
+    // $newArticle.find('img').attr('src', this.imgFilepath);
+    // $newArticle.find('h3').text(this.title);
+    // $newArticle.find('h4').text(this.description);
+
+    // return $newArticle;
 }
 
 rawData.forEach(function(projectObject){
@@ -27,6 +33,7 @@ projects.forEach(function(project) {
     $('#projects').append(project.toHtml());
 });
 
+// nav handler- toggles menu/cross in mobile
 $('#menu').on('click', function(event) {
     event.preventDefault();
     $(this).toggleClass('icon-cross');
@@ -37,7 +44,7 @@ $('#menu').on('click', function(event) {
     }
 })
 
-// nav handler
+// nav handler- shows content when nav elements clicked
 $('#nav-ul a').on('click', function() {
     let whereToGo = $(this).data('tab');
 
@@ -45,6 +52,7 @@ $('#nav-ul a').on('click', function() {
     $('#' + whereToGo).show();
 })
 
+// hides content on load
 $(document).ready(function() {
     $('.tab-content').hide();
 })
