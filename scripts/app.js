@@ -12,6 +12,7 @@ function Project (rawDataObj) {
 Project.prototype.toHtml = function() {
     console.log('handlebars:', $('#project-template').html());
     var templateFiller = Handlebars.compile($('#project-template').html());
+    
     var filledTemplate = templateFiller(this);
 
     return filledTemplate;
