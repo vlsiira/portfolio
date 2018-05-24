@@ -8,7 +8,7 @@ function Project (rawDataObj) {
     this.description = rawDataObj.description;
 }
 
-// imgFilepath showing in browser, instead of img- b/c .html?
+// imgFilepath showing in browser, instead of img- b/c .html? Tried .append, threw error
 Project.prototype.toHtml = function() {
     console.log('handlebars:', $('#project-template').html());
     var templateFiller = Handlebars.compile($('#project-template').html());
