@@ -8,10 +8,10 @@ function Project (rawDataObj) {
     this.description = rawDataObj.description;
 }
 
-// imgFilepath showing in browser, instead of img- b/c .html?
+// imgFilepath showing in browser, instead of img- b/c .html? Tried .append, threw error
 Project.prototype.toHtml = function() {
-    console.log('handlebars:', $('#project-template').html());
     var templateFiller = Handlebars.compile($('#project-template').html());
+    
     var filledTemplate = templateFiller(this);
 
     return filledTemplate;
@@ -36,11 +36,13 @@ projects.forEach(function(project) {
 // nav handler- toggles menu/cross in mobile
 $('#menu').on('click', function(event) {
     event.preventDefault();
-    $(this).toggleClass('icon-cross');
-    if ($(this).hasClass ('icon-cross')) {
+
+    if ($(this).html() == 'menu') {
         $('#nav-ul').show();
-    } else {
+        $(this).html('cross');
+    } else if ($(this).html() == 'cross') {
         $('#nav-ul').hide();
+        $(this).html('menu');
     }
 })
 

@@ -4,7 +4,7 @@
         background-image: url("../img/block-background.jpg");
     }
 
-    .icon-menu {
+    #menu {
         display: none;
     }
 
