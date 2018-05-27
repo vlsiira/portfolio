@@ -23,3 +23,11 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+.icon-menu:before {
+	content: "\e902";
+}
+
+.icon-cross:before {
+	content: "\e90d";
+}
