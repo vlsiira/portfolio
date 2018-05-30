@@ -1,6 +1,9 @@
-/* body {
-    background-image: url("../img/block-background-sm.jpg");
-} */
+body {
+    min-height: calc(100vh - 16px - 3em);
+    position: relative;
+    padding-bottom: 3em;
+    /* background-image: url("../img/block-background-sm.jpg"); */
+}
 
 header, #skills, footer, #projects, #about {
     background-color: rgb(40,84,108,0.8);
@@ -44,6 +47,9 @@ img {
 }
 
 footer {
+    position: absolute;
+    left: 5%;
+    bottom: 0;
     display: flex;
     justify-content: space-between;
 }
