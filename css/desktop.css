@@ -1,7 +1,7 @@
-@media only screen and (min-width: 451px) {
+@media only screen and (min-width: 750px) {
     
     body {
-        background-image: url("../img/block-background.jpg");
+        background-size: auto;
     }
 
     #menu {

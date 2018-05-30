@@ -2,7 +2,8 @@ body {
     min-height: calc(100vh - 16px - 3em);
     position: relative;
     padding-bottom: 3em;
-    /* background-image: url("../img/block-background-sm.jpg"); */
+    background-image: url("../img/block-background.jpg");
+    background-size: 200%;
 }
 
 header, #skills, footer, #projects, #about {
