@@ -1,9 +1,3 @@
-@media only screen and (max-width: 450px) {
-    body {
-    background-image: url("../img/block-background-sm.jpg");
-    }
-}
-    
 #menu {
     font-size: 1.75em;
     text-align: center;
