@@ -25,9 +25,10 @@ if (!localStorage.projects) {
 }
 
 function appendToDOM (data) {
-    data.forEach(function () {
-        $('#result').append('<p>' + JSON.stringify(data) + '</p>');
-        console.log('data', data);
+    data.forEach(function (ele) {
+        ele.titles.forEach(function (titles) {
+            $('#result').append('<h3>' + (titles.title) + '</h3>');
+        })
     });
 }
 
