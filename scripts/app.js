@@ -26,7 +26,8 @@ if (!localStorage.projects) {
 
 function appendToDOM (data) {
     data.forEach(function () {
-        $('#result').append(data);
+        $('#result').append('<p>' + data + '</p>');
+        console.log('data', data);
     });
 }
 
