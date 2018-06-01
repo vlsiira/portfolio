@@ -1,11 +1,31 @@
 'use strict';
 
-$.getJSON('projects.json').then(runWhenDone, runWhenFails);
+let projects = [];
+
+function Project (rawDataObj) {
+    this.title = rawDataObj.title;
+    this.imgFilepath = rawDataObj.imgFilepath;
+    this.description = rawDataObj.description;
+}
+
+Project.prototype.toHtml = function() {
+    var templateFiller = Handlebars.compile($('#project-template').html());
+    var filledTemplate = templateFiller(this);
+    return filledTemplate;
+}
+
+function renderProjects(){
+    projects.forEach(function(project) {
+    $('#projects').append(project.toHtml());
+});
+};
 
 function runWhenDone (data) {
-    appendToDOM(data);
-
-    localStorage.setItem('projects', JSON.stringify(data));
+    data.forEach(item => projects.push(new Project(item)));
+    if(!localStorage.projects) {
+        localStorage.setItem('projects', JSON.stringify(data));
+    }
+    renderProjects();
 }
 
 function runWhenFails (err) {
@@ -21,40 +41,9 @@ if (!localStorage.projects) {
         error: runWhenFails
     })
 } else {
-    appendToDOM(JSON.parse(localStorage.projects));
+    var parsedData = JSON.parse(localStorage.projects);
+    runWhenDone(parsedData);
 }
-
-function appendToDOM (data) {
-    data.forEach(function (ele) {
-        ele.titles.forEach(function (titles) {
-            $('#result').append('<h3>' + (titles.title) + '</h3>');
-        })
-    });
-}
-
-// let projects = [];
-
-// function Project (rawDataObj) {
-//     this.title = rawDataObj.title;
-//     this.imgFilepath = rawDataObj.imgFilepath;
-//     this.description = rawDataObj.description;
-// }
-
-// Project.prototype.toHtml = function() {
-//     var templateFiller = Handlebars.compile($('#project-template').html());
-    
-//     var filledTemplate = templateFiller(this);
-
-//     return filledTemplate;
-// }
-
-// rawData.forEach(function(projectObject){
-//     projects.push(new Project(projectObject));
-// });
-
-// projects.forEach(function(project) {
-//     $('#projects').append(project.toHtml());
-// });
 
 // nav handler- toggles menu/cross in mobile
 $('#menu').on('click', function(event) {
