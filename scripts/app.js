@@ -8,30 +8,42 @@ function Project (rawDataObj) {
     this.description = rawDataObj.description;
 }
 
-// imgFilepath showing in browser, instead of img- b/c .html? Tried .append, threw error
 Project.prototype.toHtml = function() {
     var templateFiller = Handlebars.compile($('#project-template').html());
-    
     var filledTemplate = templateFiller(this);
-
     return filledTemplate;
-    // const $newArticle = $('article.template').clone();
-    // $newArticle.removeClass('template');
-
-    // $newArticle.find('img').attr('src', this.imgFilepath);
-    // $newArticle.find('h3').text(this.title);
-    // $newArticle.find('h4').text(this.description);
-
-    // return $newArticle;
 }
 
-rawData.forEach(function(projectObject){
-    projects.push(new Project(projectObject));
-});
-
-projects.forEach(function(project) {
+function renderProjects(){
+    projects.forEach(function(project) {
     $('#projects').append(project.toHtml());
 });
+};
+
+function runWhenDone (data) {
+    data.forEach(item => projects.push(new Project(item)));
+    if(!localStorage.projects) {
+        localStorage.setItem('projects', JSON.stringify(data));
+    }
+    renderProjects();
+}
+
+function runWhenFails (err) {
+    console.error('error', err);
+}
+
+// check if data needs to be fetched
+if (!localStorage.projects) {
+    $.ajax({
+        type: 'GET',
+        url: 'projects.json',
+        success: runWhenDone,
+        error: runWhenFails
+    })
+} else {
+    var parsedData = JSON.parse(localStorage.projects);
+    runWhenDone(parsedData);
+}
 
 // nav handler- toggles menu/cross in mobile
 $('#menu').on('click', function(event) {

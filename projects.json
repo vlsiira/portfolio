@@ -1,0 +1,13 @@
+
+[
+    {
+        "title": "Market Analysis App",
+        "imgFilepath": "img/BusMall.png",
+        "description": "Provides a platform for users to rate products, and displays a graph of the results."
+    },
+    {
+        "title": "Thirsty Thistles",
+        "imgFilepath": "img/BusMall.png",
+        "description": "Allows gardeners to create a watering schedule based on plant type, and to check off which plants have been watered."
+    }
+]
