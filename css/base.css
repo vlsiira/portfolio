@@ -6,6 +6,17 @@ body {
     background-size: 200%;
 }
 
+#menu {
+    font-size: 1.75em;
+    text-align: center;
+    color: rgb(10, 226, 110);
+        
+}
+    
+nav ul {
+    display: none;
+}
+
 header, #skills, footer, #projects, #about {
     background-color: rgb(40,84,108,0.8);
     margin: auto;
@@ -22,7 +33,6 @@ header {
 
 section, footer, #projects {
     width: 90%;
-    /* padding: 5px; This made my semi-transparent overlays flow together--err */  
 }
 
 h1, h3 {
@@ -56,6 +66,10 @@ footer {
 }
 
 #footer-nav, #footer-copy {
+    padding: .4em;
+}
+
+#footer-nav a {
     padding: .2em;
 }
 

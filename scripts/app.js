@@ -17,7 +17,7 @@ Project.prototype.toHtml = function() {
 function renderProjects(){
     projects.forEach(function(project) {
     $('#projects').append(project.toHtml());
-});
+    });
 };
 
 function runWhenDone (data) {
