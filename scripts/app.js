@@ -38,12 +38,12 @@ $('#menu').on('click', function(event) {
     event.preventDefault();
 
     if ($(this).html() == 'menu') {
-        $('#nav-ul').show();
-        $('nav li').addClass('slide'); // I want it to trigger css transition when menu icon clicked, but doesn't work
+        // $('#nav-ul').show();
+        $('#nav-ul').addClass('slide'); // I want it to trigger css transition when menu icon clicked, but doesn't work
         $(this).html('cross');
     } else if ($(this).html() == 'cross') {
-        $('#nav-ul').hide();
-        $('nav li').removeClass('slide');        
+        // $('#nav-ul').hide();
+        $('#nav-ul').removeClass('slide');        
         $(this).html('menu');
     }
 })
