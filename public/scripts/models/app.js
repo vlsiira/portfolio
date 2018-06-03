@@ -1,49 +1,77 @@
 'use strict';
 
-let projects = [];
-
-function Project (rawDataObj) {
-    this.title = rawDataObj.title;
-    this.imgFilepath = rawDataObj.imgFilepath;
-    this.description = rawDataObj.description;
-}
-
-Project.prototype.toHtml = function() {
-    var templateFiller = Handlebars.compile($('#project-template').html());
-    var filledTemplate = templateFiller(this);
-    return filledTemplate;
-}
-
-function renderProjects(){
-    projects.forEach(function(project) {
-    $('#projects').append(project.toHtml());
-    });
-};
-
-function runWhenDone (data) {
-    data.forEach(item => projects.push(new Project(item)));
-    if(!localStorage.projects) {
-        localStorage.setItem('projects', JSON.stringify(data));
+(function(module) {
+    function Project(rawDataObj) {
+        Object.keys(rawDataObj).forEach(key => this[key] = rawDataObj[key]);
     }
-    renderProjects();
-}
 
-function runWhenFails (err) {
-    console.error('error', err);
-}
+    Project.all = [];
+
+    // need to alter this function?  what is marked(this.body)?
+    Project.prototype.toHtml = function() {
+        var templateFiller = Handlebars.compile($('#project-template').html());
+        var filledTemplate = templateFiller(this);
+        return filledTemplate;
+    };
+
+    // Project.loadAll function goes here?  Not sure about this part
+    Project.loadAll = sections => {
+        Project.all = sections.map(ele => new Project(ele));
+    };
+
+    Project.fetchAll = callback => {
+        $.get('/projects')
+        .then(
+            results => {
+                Project.loadAll(results);
+                callback();
+            }
+        )
+    };
+
+    module.Project = Project;
+})(window);
+
+// I think I don't need the code below anymore:
+// let projects = [];
+
+// function Project (rawDataObj) {
+//     this.title = rawDataObj.title;
+//     this.imgFilepath = rawDataObj.imgFilepath;
+//     this.description = rawDataObj.description;
+// }
+
+
+// function renderProjects(){
+//     projects.forEach(function(project) {
+//     $('#projects').append(project.toHtml());
+//     });
+// };
+
+// function runWhenDone (data) {
+//     data.forEach(item => projects.push(new Project(item)));
+//     if(!localStorage.projects) {
+//         localStorage.setItem('projects', JSON.stringify(data));
+//     }
+//     renderProjects();
+// }
+
+// function runWhenFails (err) {
+//     console.error('error', err);
+// }
 
 // check if data needs to be fetched
-if (!localStorage.projects) {
-    $.ajax({
-        type: 'GET',
-        url: 'projects.json',
-        success: runWhenDone,
-        error: runWhenFails
-    })
-} else {
-    var parsedData = JSON.parse(localStorage.projects);
-    runWhenDone(parsedData);
-}
+// if (!localStorage.projects) {
+//     $.ajax({
+//         type: 'GET',
+//         url: 'projects.json',
+//         success: runWhenDone,
+//         error: runWhenFails
+//     })
+// } else {
+//     var parsedData = JSON.parse(localStorage.projects);
+//     runWhenDone(parsedData);
+// }
 
 // nav handler- toggles menu/cross in mobile & calls css .slide transition
 $('#menu').on('click', function(event) {
