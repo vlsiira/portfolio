@@ -42,8 +42,6 @@ nav li {
     border: 1px solid;
     border-color: rgb(32, 169, 96);
     border-radius: 5px;
-    /* height: 26.5px; */
-    /* overflow: hidden; */
 }
 
 #nav-ul {
@@ -55,11 +53,6 @@ nav li {
 #nav-ul.slide {
     height: 79.5px;
 }
-
-/* #nav-ul:hover {
-    height: 30px;
-    overflow: visible;
-} */
 
 #projects {
     display: flex;

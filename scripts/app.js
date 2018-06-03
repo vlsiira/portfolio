@@ -8,21 +8,12 @@ function Project (rawDataObj) {
     this.description = rawDataObj.description;
 }
 
-// imgFilepath showing in browser, instead of img- b/c .html? Tried .append, threw error
 Project.prototype.toHtml = function() {
     var templateFiller = Handlebars.compile($('#project-template').html());
     
     var filledTemplate = templateFiller(this);
 
     return filledTemplate;
-    // const $newArticle = $('article.template').clone();
-    // $newArticle.removeClass('template');
-
-    // $newArticle.find('img').attr('src', this.imgFilepath);
-    // $newArticle.find('h3').text(this.title);
-    // $newArticle.find('h4').text(this.description);
-
-    // return $newArticle;
 }
 
 rawData.forEach(function(projectObject){
@@ -33,16 +24,14 @@ projects.forEach(function(project) {
     $('#projects').append(project.toHtml());
 });
 
-// nav handler- toggles menu/cross in mobile
+// nav handler- toggles menu/cross in mobile & calls css .slide transition
 $('#menu').on('click', function(event) {
     event.preventDefault();
 
     if ($(this).html() == 'menu') {
-        // $('#nav-ul').show();
-        $('#nav-ul').addClass('slide'); // I want it to trigger css transition when menu icon clicked, but doesn't work
+        $('#nav-ul').addClass('slide');
         $(this).html('cross');
     } else if ($(this).html() == 'cross') {
-        // $('#nav-ul').hide();
         $('#nav-ul').removeClass('slide');        
         $(this).html('menu');
     }
