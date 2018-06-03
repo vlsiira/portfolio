@@ -13,4 +13,13 @@
         justify-content: space-around;
         height: 26.5px;
     }
+
+    #nav-ul li {
+        height: 18.125px;
+    }
+
+    /* when going from mobile to desktop, makes nav li's slide from 79.5 px to 26.5 */
+    #nav-ul.slide {
+        height: 26.5px;
+    }
 }
