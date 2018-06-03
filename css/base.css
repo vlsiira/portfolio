@@ -31,6 +31,12 @@ header {
     border-radius: 5px;
 }
 
+#menu {
+    font-size: 1.75em;
+    text-align: center;
+    color: rgb(10, 226, 110);
+}
+
 section, footer, #projects {
     width: 90%;
 }
@@ -47,6 +53,16 @@ nav li {
     border: 1px solid;
     border-color: rgb(32, 169, 96);
     border-radius: 5px;
+}
+
+#nav-ul {
+    height: 0px;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+#nav-ul.slide {
+    height: 79.5px;
 }
 
 #projects {

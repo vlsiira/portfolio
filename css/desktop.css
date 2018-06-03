@@ -8,8 +8,13 @@
         display: none;
     }
 
-    nav ul {
+    #nav-ul {
         display: flex;
         justify-content: space-around;
+        height: 26.5px;
+    }
+
+    #nav-ul li {
+        height: 18.125px;
     }
 }

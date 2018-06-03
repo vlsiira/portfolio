@@ -45,15 +45,15 @@ if (!localStorage.projects) {
     runWhenDone(parsedData);
 }
 
-// nav handler- toggles menu/cross in mobile
+// nav handler- toggles menu/cross in mobile & calls css .slide transition
 $('#menu').on('click', function(event) {
     event.preventDefault();
 
     if ($(this).html() == 'menu') {
-        $('#nav-ul').show();
+        $('#nav-ul').addClass('slide');
         $(this).html('cross');
     } else if ($(this).html() == 'cross') {
-        $('#nav-ul').hide();
+        $('#nav-ul').removeClass('slide');        
         $(this).html('menu');
     }
 })
