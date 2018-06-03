@@ -39,9 +39,11 @@ $('#menu').on('click', function(event) {
 
     if ($(this).html() == 'menu') {
         $('#nav-ul').show();
+        $('nav li').addClass('slide'); // I want it to trigger css transition when menu icon clicked, but doesn't work
         $(this).html('cross');
     } else if ($(this).html() == 'cross') {
         $('#nav-ul').hide();
+        $('nav li').removeClass('slide');        
         $(this).html('menu');
     }
 })

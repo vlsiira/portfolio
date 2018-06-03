@@ -20,9 +20,14 @@ header {
     border-radius: 5px;
 }
 
+#menu {
+    font-size: 1.75em;
+    text-align: center;
+    color: rgb(10, 226, 110);
+}
+
 section, footer, #projects {
     width: 90%;
-    /* padding: 5px; This made my semi-transparent overlays flow together--err */  
 }
 
 h1, h3 {
@@ -37,7 +42,25 @@ nav li {
     border: 1px solid;
     border-color: rgb(32, 169, 96);
     border-radius: 5px;
+    height: 0px; /*  try to make transition work */
+    overflow: hidden;
 }
+
+#nav-ul {
+    height: 0px;
+    /* overflow: hidden; */
+    transition: all 1s;
+}
+
+.slide {
+    transition: all 1s;
+    height: 50px;
+}
+
+/* #nav-ul:hover {
+    height: 30px;
+    overflow: visible;
+} */
 
 #projects {
     display: flex;
