@@ -16,13 +16,36 @@ Project.prototype.toHtml = function() {
     return filledTemplate;
 }
 
-rawData.forEach(function(projectObject){
-    projects.push(new Project(projectObject));
-});
-
-projects.forEach(function(project) {
+function renderProjects(){
+    projects.forEach(function(project) {
     $('#projects').append(project.toHtml());
-});
+    });
+};
+
+function runWhenDone (data) {
+    data.forEach(item => projects.push(new Project(item)));
+    if(!localStorage.projects) {
+        localStorage.setItem('projects', JSON.stringify(data));
+    }
+    renderProjects();
+}
+
+function runWhenFails (err) {
+    console.error('error', err);
+}
+
+// check if data needs to be fetched
+if (!localStorage.projects) {
+    $.ajax({
+        type: 'GET',
+        url: 'projects.json',
+        success: runWhenDone,
+        error: runWhenFails
+    })
+} else {
+    var parsedData = JSON.parse(localStorage.projects);
+    runWhenDone(parsedData);
+}
 
 // nav handler- toggles menu/cross in mobile & calls css .slide transition
 $('#menu').on('click', function(event) {
