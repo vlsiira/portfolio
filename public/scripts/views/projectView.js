@@ -1,7 +1,13 @@
 'use strict';
 
+const app = app || {}; // 12
+
 (function(module) {
-    const projectView = {};
+    const projectView = {
+        init: function () {
+            
+        }
+    };
 
     projectView.initIndexPage = () => {
         Project.all.forEach(project => {
