@@ -1,34 +1,52 @@
 'use strict';
 
+const app = app || {}; // 12
+
 (function(module) {
-    function Project(rawDataObj) {
-        Object.keys(rawDataObj).forEach(key => this[key] = rawDataObj[key]);
+
+    const repos = {}; // 12
+
+    repos.requestRepos = function (callback) {
+        $.ajax({
+            url: `https://api.github.com/user/repos`,
+            type: 'GET',
+            headers: {'Authorization': `token ${githubToken}`}
+        })
+        .then(data => repos.all = data, err => console.error(err))
+        .then(callback);
     }
 
-    Project.all = [];
+    module.repos = repos;
+})(app);
 
-    Project.prototype.toHtml = function() {
-        var templateFiller = Handlebars.compile($('#project-template').text());
-        var filledTemplate = templateFiller(this);
-        return filledTemplate;
-    };
+    // function Project(rawDataObj) {
+    //     Object.keys(rawDataObj).forEach(key => this[key] = rawDataObj[key]);
+    // }
 
-    Project.loadAll = sections => {
-        Project.all = sections.map(ele => new Project(ele));
-    };
+    // Project.all = [];
 
-    Project.fetchAll = callback => {
-        $.get('/projects')
-        .then(
-            results => {
-                Project.loadAll(results);
-                callback();
-            }
-        )
-    };
+    // Project.prototype.toHtml = function() {
+    //     var templateFiller = Handlebars.compile($('#project-template').text());
+    //     var filledTemplate = templateFiller(this);
+    //     return filledTemplate;
+    // };
 
-    module.Project = Project;
-})(window);
+    // Project.loadAll = sections => {
+    //     Project.all = sections.map(ele => new Project(ele));
+    // };
+
+    // Project.fetchAll = callback => {
+    //     $.get('/projects')
+    //     .then(
+    //         results => {
+    //             Project.loadAll(results);
+    //             callback();
+    //         }
+    //     )
+    // };
+
+//     module.Project = Project;
+// })(window);
 
 // nav handler- toggles menu/cross in mobile & calls css .slide transition
 $('#menu').on('click', function(event) {
