@@ -12,4 +12,4 @@
     Project.fetchAll(projectView.initIndexPage);
     module.projectView = projectView;
 
-})(widow);
+})(window);

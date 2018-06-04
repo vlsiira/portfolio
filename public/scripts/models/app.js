@@ -7,14 +7,12 @@
 
     Project.all = [];
 
-    // need to alter this function?  what is marked(this.body)?
     Project.prototype.toHtml = function() {
-        var templateFiller = Handlebars.compile($('#project-template').html());
+        var templateFiller = Handlebars.compile($('#project-template').text());
         var filledTemplate = templateFiller(this);
         return filledTemplate;
     };
 
-    // Project.loadAll function goes here?  Not sure about this part
     Project.loadAll = sections => {
         Project.all = sections.map(ele => new Project(ele));
     };
