@@ -68,6 +68,10 @@ nav li {
     display: flex;
 }
 
+#results {
+    border: 1 px solid red;
+}
+
 .tab-content {
     padding: .5em;
     border: 2px solid;
