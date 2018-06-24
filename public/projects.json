@@ -1,7 +1,7 @@
 [
     {
         "title": "To Spot a Mockingbird",
-        "imgFilepath": "img/bird.png",
+        "imgFilepath": "img/Bird.png",
         "description": "A birdwatching tool, allowing users to log their bird sightings and identify birds by species."
     },
     {
