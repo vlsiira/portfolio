@@ -10,7 +10,7 @@
         "description": "Allows gardeners to create a watering schedule based on plant type, and to check off which plants have been watered."
     },
     {
-        "title": "Market Analysis App",
+        "title": "BusMall",
         "imgFilepath": "img/BusMall.png",
         "description": "Provides a platform for users to rate products, and displays a graph of the results."
     }
