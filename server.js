@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static('./public'));
 
+// TODO - request not being read
 app.get('/', function(request, response) {
     response.sendFile('./public/index.html');
 });

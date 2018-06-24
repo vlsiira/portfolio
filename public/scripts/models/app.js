@@ -22,6 +22,7 @@
         .then(
             results => {
                 Project.loadAll(results);
+                // TODO - fix fix warning
                 callback(); // warning TypeError: callback is not a function
             }
         )
