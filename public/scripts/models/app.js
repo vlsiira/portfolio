@@ -13,16 +13,18 @@
         return filledTemplate;
     };
 
+    // TODO - what is .loadAll?  .load is a jQ method, but I can't find .loadAll
     Project.loadAll = sections => {
         Project.all = sections.map(ele => new Project(ele));
     };
 
+    // TODO - what is .fetchAll?  .fetch is an API method, but I'm not using an API here
     Project.fetchAll = callback => {
         $.get('/projects')
         .then(
             results => {
                 Project.loadAll(results);
-                // TODO - fix fix warning
+                // TODO - fix warning
                 callback(); // warning TypeError: callback is not a function
             }
         )

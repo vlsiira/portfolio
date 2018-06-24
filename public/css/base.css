@@ -75,6 +75,9 @@ nav li {
     border-radius: 5px;
 }
 
+/* TODO - style dynamically added content */
+/* TODO - make links think they're not visited yet */
+
 /* not working, want to make it on it's own line */
 #projects-header {
     display: block;
