@@ -22,7 +22,7 @@
         .then(
             results => {
                 Project.loadAll(results);
-                callback();
+                callback(); // warning TypeError: callback is not a function
             }
         )
     };
