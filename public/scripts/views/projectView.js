@@ -5,7 +5,7 @@
 
     projectView.initIndexPage = () => {
         Project.all.forEach(project => {
-            $('#projects').append(project.toHtml('#project-template'));
+            $('#result').append(project.toHtml('#project-template'));
         })
     }
 

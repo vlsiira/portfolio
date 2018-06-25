@@ -64,14 +64,6 @@ nav li {
     height: 79.5px;
 }
 
-#projects {
-    display: flex;
-}
-
-#results {
-    border: 1 px solid red;
-}
-
 .tab-content {
     padding: .5em;
     border: 2px solid;
@@ -83,13 +75,17 @@ nav li {
 /* TODO - make links think they're not visited yet */
 
 /* not working, want to make it on it's own line */
-#projects-header {
+/* #projects-header {
     display: block;
-}
+} */
 
 /* not working, want to add margins to dynamically added content */
-#result img {
+.article-template {
     margin: 10px;
+}
+
+#result {
+    display: flex;
 }
 
 img {

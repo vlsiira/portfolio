@@ -13,16 +13,16 @@
         return filledTemplate;
     };
 
-    // TODO - what is .loadAll?  .load is a jQ method, but I can't find .loadAll
     Project.loadAll = sections => {
         Project.all = sections.map(ele => new Project(ele));
     };
 
-    // TODO - what is .fetchAll?  .fetch is an API method, but I'm not using an API here
     Project.fetchAll = callback => {
+        console.log('fetchAll called', callback);
         $.get('/projects')
         .then(
             results => {
+                console.log('results:', results);
                 Project.loadAll(results);
                 // TODO - fix warning
                 callback(); // warning TypeError: callback is not a function
@@ -47,12 +47,12 @@ $('#menu').on('click', function(event) {
 })
 
 // nav handler- shows content when nav elements clicked
-$('#nav-ul a').on('click', function() {
-    let whereToGo = $(this).data('tab');
+// $('#nav-ul a').on('click', function() {
+//     let whereToGo = $(this).data('tab');
 
-    $('.tab-content').hide();
-    $('#' + whereToGo).show();
-})
+//     $('.tab-content').hide();
+//     $('#' + whereToGo).show();
+// })
 
 // hides content on load
 $(document).ready(function() {
