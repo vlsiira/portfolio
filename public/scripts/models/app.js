@@ -24,8 +24,7 @@
             results => {
                 console.log('results:', results);
                 Project.loadAll(results);
-                // TODO - fix warning
-                callback(); // warning TypeError: callback is not a function
+                callback();
             }
         )
     };
@@ -45,14 +44,6 @@ $('#menu').on('click', function(event) {
         $(this).html('menu');
     }
 })
-
-// nav handler- shows content when nav elements clicked
-// $('#nav-ul a').on('click', function() {
-//     let whereToGo = $(this).data('tab');
-
-//     $('.tab-content').hide();
-//     $('#' + whereToGo).show();
-// })
 
 // hides content on load
 $(document).ready(function() {

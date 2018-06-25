@@ -26,13 +26,6 @@ header {
     border-radius: 5px;
 }
 
-/* duplicate */
-/* #menu {
-    font-size: 1.75em;
-    text-align: center;
-    color: rgb(10, 226, 110);
-} */
-
 section, footer, #projects {
     width: 90%;
 }
@@ -71,15 +64,6 @@ nav li {
     border-radius: 5px;
 }
 
-/* TODO - style dynamically added content */
-/* TODO - make links think they're not visited yet */
-
-/* not working, want to make it on it's own line */
-/* #projects-header {
-    display: block;
-} */
-
-/* not working, want to add margins to dynamically added content */
 .article-template {
     margin: 10px;
 }
