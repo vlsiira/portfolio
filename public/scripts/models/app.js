@@ -18,11 +18,9 @@
     };
 
     Project.fetchAll = callback => {
-        console.log('fetchAll called', callback);
         $.get('/projects')
         .then(
             results => {
-                console.log('results:', results);
                 Project.loadAll(results);
                 callback();
             }
