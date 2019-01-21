@@ -1,15 +1,18 @@
 [
     {
+        "projectLink": " ",
         "title": "To Spot a Mockingbird",
         "imgFilepath": "img/bird.png",
         "description": "A birdwatching tool, allowing users to log their bird sightings and identify birds by species."
     },
     {
+        "projectLink": "https://laurencca.github.io/2018-03-plant-app/",
         "title": "Thirsty Thistles",
         "imgFilepath": "img/ThirstyThistles.png",
         "description": "Allows gardeners to create a watering schedule based on plant type, and to check off which plants have been watered."
     },
     {
+        "projectLink": "https://vlsiira.github.io/market-analysis-app/",
         "title": "BusMall",
         "imgFilepath": "img/BusMall.png",
         "description": "Provides a platform for users to rate products, and displays a graph of the results."
