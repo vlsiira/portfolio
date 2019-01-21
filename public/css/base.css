@@ -68,6 +68,22 @@ nav li {
     margin: 10px;
 }
 
+.article-template h3, p {
+    color: rgb(186, 197, 197);    
+}
+
+.article-template a {
+    text-decoration: none;
+}
+
+.article-template h3 {
+    text-decoration: underline;
+}
+
+a[href$=" "] {
+    cursor: not-allowed;
+}
+
 #result {
     display: flex;
 }
