@@ -80,10 +80,6 @@ nav li {
     text-decoration: underline;
 }
 
-a[href$=" "] {
-    cursor: not-allowed;
-}
-
 #result {
     display: flex;
 }
