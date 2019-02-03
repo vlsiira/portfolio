@@ -7,12 +7,14 @@ page('/about', aboutController.body);
 page();
 
 // history object to allow for use of back and forward buttons
-// try w/o page function first - add #content to html
-   // need to call page(projects) if it is that section, otherwise, back and forward not working for projects tab
+// TODO: refactor to remove console errors (lines 15 & 36)
 $(function() {
     function loadContent(url) {
+        // need to call page function for projects, b/c data loaded from JSON
+           // console error: Uncaught ReferenceError href not defined here
         if (href === "/projects") {
             page('/projects', projectsController.body);
+        // otherwise, can use load function, b/c data from html
         } else {
             $('#content').load(url + ' #tab-content');
         }
@@ -30,6 +32,7 @@ $(function() {
 
     window.onpopstate = function() {
         let path = location.pathname;
+        // console error: Uncaught ReferenceError href not defined here
         loadContent(path);
         let page = path.substring(location.pathname.lastIndexOf('/') + 1);
         $('a').removeClass('tab-content');
