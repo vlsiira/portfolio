@@ -7,16 +7,17 @@ page('/about', aboutController.body);
 page();
 
 // history object to allow for use of back and forward buttons
-// TODO: refactor to remove console errors (lines 15 & 36)
+// TODO: prevent 404 - I think back button is somehow allowed beyond the # of times it should be (user hasn't clicked new links that much, and back button should be non-clickable)
 $(function() {
     function loadContent(url) {
-        // need to call page function for projects, b/c data loaded from JSON
-           // console error: Uncaught ReferenceError href not defined here
-        if (href === "/projects") {
+        // GET 404 errors for skills and about sections - only if use back button too many times
+        // call page function for all parts of page; eliminates console errors, but 404 above
+        if (url === "/projects") {
             page('/projects', projectsController.body);
-        // otherwise, can use load function, b/c data from html
-        } else {
-            $('#content').load(url + ' #tab-content');
+        } else if (url === "/skills") {
+            page('/skills', skillsController.body);
+        } else if (url === "/about") {
+            page('/about', aboutController.body);
         }
     }
 
@@ -32,7 +33,6 @@ $(function() {
 
     window.onpopstate = function() {
         let path = location.pathname;
-        // console error: Uncaught ReferenceError href not defined here
         loadContent(path);
         let page = path.substring(location.pathname.lastIndexOf('/') + 1);
         $('a').removeClass('tab-content');
